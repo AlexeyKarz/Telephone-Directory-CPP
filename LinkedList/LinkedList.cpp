@@ -129,7 +129,7 @@ template <class List_entry> void LinkedList<List_entry>::print() const
     else {
         Node<List_entry> *temp = head;
         while (temp != NULL) {
-            cout << temp->entry << "  ";
+            temp->entry.print();
             temp = temp->next;
         }
     }

@@ -4,6 +4,7 @@
 #include "User/User.h"
 #include "LinkedList/LinkedList.h"
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -18,7 +19,14 @@ int main() {
     LinkedList<User> users;
 
     // read from file users data and add it to the list
-    readFromFile(users, "users.txt");
+    string filename = "../teldir.txt";
+    readFromFile(users, filename);
+
+//     add a sample user
+//    User user("John", "Doe");
+//    user.add_phone_number("123456789");
+//    user.add_phone_number("987654321");
+//    users.insert(user);
 
     cout << "Welcome to the telephone directory!" << endl;
     int choice;
@@ -44,6 +52,9 @@ int main() {
             }
             case 4: {
                 // display a subscriber's phone numbers
+                // for test display one
+                Node<User> *current = users.get_head();
+                current->entry.print();
                 break;
             }
             case 5: {
@@ -52,11 +63,12 @@ int main() {
             }
             case 6: {
                 // display the directory
+                users.print();
                 break;
             }
             case 7: {
                 // exit
-                writeToFile(users, "users.txt");
+                writeToFile(users, filename);
                 break;
             }
             default: {
@@ -104,21 +116,25 @@ void writeToFile(const LinkedList<User> &users, const string &filename) {
 void readFromFile(LinkedList<User> &users, const string &filename) {
 
     ifstream file(filename);
+    // if the file does not exist, create it
+    if (!file) {
+        ofstream newFile(filename);
+        newFile.close();
+        return;
+    }
 
     string line;
     while (getline(file, line)) {
-        string name, surname;
+        string name, surname, phone;
         vector<string> phones;
-        int pos = 0;
-        pos = line.find(",");
-        name = line.substr(0, pos);
-        line.erase(0, pos + 1);
-        pos = line.find(",");
-        surname = line.substr(0, pos);
-        line.erase(0, pos + 1);
-        while ((pos = line.find(",")) != string::npos) {
-            phones.push_back(line.substr(0, pos));
-            line.erase(0, pos + 1);
+        stringstream ss(line);
+
+        getline(ss, name, ',');    // read name
+        getline(ss, surname, ','); // read surname
+
+        // read all phone numbers
+        while (getline(ss, phone, ',')) {
+            phones.push_back(phone);
         }
 
         User user(name, surname);
