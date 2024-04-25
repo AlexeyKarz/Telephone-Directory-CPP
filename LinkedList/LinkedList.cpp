@@ -41,6 +41,23 @@ template <class List_entry> int LinkedList<List_entry>::size() const
     return count;
 }
 
+template <class List_entry> Error_code LinkedList<List_entry>::retrieve(int position, List_entry &x) const
+{
+    if (empty()) return underflow;
+    if (position < 0 || position >= size()) return not_found;
+    Node<List_entry> *current = head;
+    for (int i = 0; i < position; i++)
+    {
+        current = current->next;
+    }
+    x = current->entry;
+    return success;
+}
+
+template <class List_entry> Node<List_entry>* LinkedList<List_entry>::get_head() const {
+    return head;
+}
+
 template <class List_entry> Error_code LinkedList<List_entry>::insert(const List_entry &item)
 {
     Node<List_entry> *new_entry = new Node<List_entry>(item);

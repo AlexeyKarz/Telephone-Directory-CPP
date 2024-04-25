@@ -5,27 +5,16 @@
 #include "User.h"
 
 
-//User();
-//User(string name, string phone);
-//string get_name() const;
-//string get_surname() const;
-//void add_phone_number(string phone);
-//void print_phone_numbers() const;
-//void print() const;
-
-
 User::User()
 {
     name = "";
     surname = "";
 }
 
-User::User(string const name, string const surname, string const phone)
+User::User(string const name, string const surname)
 {
     this->name = name;
     this->surname = surname;
-    this->surname = "";
-    phones.push_back(phone);
 }
 
 string User::get_name() const
@@ -43,6 +32,11 @@ void User::add_phone_number(string phone)
     phones.push_back(phone);
 }
 
+vector<string> User::get_phones() const
+{
+    return phones;
+}
+
 void User::print_phone_numbers() const
 {
     for (int i = 0; i < phones.size(); i++)
@@ -56,4 +50,13 @@ void User::print() const
     cout << name << " " << surname << endl;
     cout << "Phone numbers:" << endl;
     print_phone_numbers();
+}
+
+bool User::operator < (const User &otherUser) const {
+    if (surname < otherUser.surname) {
+        return true;
+    } else if (surname == otherUser.surname) {
+        return name < otherUser.name;
+    }
+    return false;
 }

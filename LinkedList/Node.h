@@ -6,7 +6,6 @@
 #define TELDIRECTORY_NODE_H
 
 
-enum Error_code {success,overflow,underflow,not_found};
 
 template <class Node_entry> class Node {
 public:
