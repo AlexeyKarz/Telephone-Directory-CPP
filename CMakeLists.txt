@@ -7,4 +7,7 @@ add_executable(TelDirectory main.cpp
         User/User.h
         User/User.cpp
         LinkedList/LinkedList.h
-        LinkedList/LinkedList.cpp)
+        LinkedList/LinkedList.cpp
+        LinkedList/Node.h
+        LinkedList/Node.h
+        LinkedList/Node.cpp)
