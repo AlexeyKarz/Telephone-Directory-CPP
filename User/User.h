@@ -26,7 +26,7 @@ public:
     string get_name() const;
     string get_surname() const;
     void add_phone_number(string const phone);
-    void delete_phone_number(string const phone);
+    bool delete_phone_number(string const phone);
     vector<string> get_phones() const;
     void print_phone_numbers() const;
     void print() const;

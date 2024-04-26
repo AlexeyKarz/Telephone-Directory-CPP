@@ -44,6 +44,7 @@ int main() {
             }
             case 2: {
                 // remove the phone from a subscriber
+                deletePhoneNumber(users);
                 break;
             }
             case 3: {
@@ -60,6 +61,7 @@ int main() {
             }
             case 5: {
                 // delete a subscriber
+                deleteSubscriber(users);
                 break;
             }
             case 6: {

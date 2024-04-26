@@ -10,6 +10,7 @@
 
 bool validString(const string &str);
 bool addSubscriber(LinkedList<User> &users);
+bool findSubscriber(LinkedList<User> &users, Node<User> *&found);
 bool deleteSubscriber(LinkedList<User> &users);
 bool addPhoneNumber(LinkedList<User> &users);
 bool deletePhoneNumber(LinkedList<User> &users);

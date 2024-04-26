@@ -31,13 +31,14 @@ void User::add_phone_number(string const phone)
     phones.push_back(phone);
 }
 
-void User::delete_phone_number(string const phone) {
+bool User::delete_phone_number(string const phone) {
     for (int i = 0; i < phones.size(); i++) {
         if (phones[i] == phone) {
             phones.erase(phones.begin() + i);
-            return;
+            return true;
         }
     }
+    return false;
 }
 
 vector<string> User::get_phones() const
