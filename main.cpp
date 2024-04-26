@@ -3,14 +3,13 @@
 #include <iostream>
 #include "User/User.h"
 #include "LinkedList/LinkedList.h"
-#include <fstream>
-#include <sstream>
+#include "FileIO/FileManager.h"
+#include <regex>
 
 using namespace std;
 
-void writeToFile(const LinkedList<User> &users, const string &filename);
-void readFromFile(LinkedList<User> &users, const string &filename);
 void printMenu();
+bool addSubscriber(LinkedList<User> &users);
 
 
 int main() {
@@ -20,7 +19,8 @@ int main() {
 
     // read from file users data and add it to the list
     string filename = "../teldir.txt";
-    readFromFile(users, filename);
+    FileManager fileManager;
+    fileManager.readFromFile(users, filename);
 
 //     add a sample user
 //    User user("John", "Doe");
@@ -40,6 +40,7 @@ int main() {
         switch (choice) {
             case 1: {
                 // add a new subscriber
+                addSubscriber(users);
                 break;
             }
             case 2: {
@@ -68,11 +69,17 @@ int main() {
             }
             case 7: {
                 // exit
-                writeToFile(users, filename);
+                fileManager.writeToFile(users, filename);
                 break;
             }
             default: {
-                cout << "Invalid choice!" << endl;
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(32767, '\n');
+                    cout << "Invalid choice!" << endl;
+                } else {
+                    cout << "Invalid choice!" << endl;
+                }
             }
 
         }
@@ -94,59 +101,41 @@ void printMenu() {
 }
 
 
-void writeToFile(const LinkedList<User> &users, const string &filename) {
+bool addSubscriber(LinkedList<User> &users) {
 
-    ofstream file(filename);
+    // ask for the name and surname
+    string name, surname;
+    cout << "Enter the name: ";
+    getline(cin, name);
+    cout << "Enter the surname: ";
+    getline(cin, surname);
 
-    Node<User> *current = users.get_head();
-    while (current != nullptr) {
-        file << current->entry.get_name() << "," << current->entry.get_surname();
-        vector<string> phones = current->entry.get_phones();
-
-        for (int i = 0; i < phones.size(); i++) {
-            file << "," << phones[i];
-        }
-        file << "\n";
-        current = current->next;
+    // check whether the input is valid (contains only allowed characters, excluding commas)
+    regex validString("^[a-zA-Z0-9 '-]+$"); // allowed characters: a-z, A-Z, 0-9, space, hyphen, apostrophe
+    if (!regex_match(name, validString) || !regex_match(surname, validString)) {
+        cout << "Invalid name or surname!" << endl;
+        cout << "Allowed characters: a-z, A-Z, 0-9, space, hyphen, apostrophe" << endl;
+        return false;
     }
-    file.close();
+
+    // create a new user
+    User user(name, surname);
+
+    // ask for the phone numbers
+    string phone;
+    cout << "How many phone numbers do you want to add? ";
+    int count;
+    cin >> count;
+    cin.ignore(); // to ignore the newline character
+    for (int i = 0; i < count; i++) {
+        cout << "Enter the phone number: ";
+        getline(cin, phone);
+        user.add_phone_number(phone);
+    }
+
+    // add the user to the list
+    users.insert(user);
+    return true;
+
 }
-
-
-void readFromFile(LinkedList<User> &users, const string &filename) {
-
-    ifstream file(filename);
-    // if the file does not exist, create it
-    if (!file) {
-        ofstream newFile(filename);
-        newFile.close();
-        return;
-    }
-
-    string line;
-    while (getline(file, line)) {
-        string name, surname, phone;
-        vector<string> phones;
-        stringstream ss(line);
-
-        getline(ss, name, ',');    // read name
-        getline(ss, surname, ','); // read surname
-
-        // read all phone numbers
-        while (getline(ss, phone, ',')) {
-            phones.push_back(phone);
-        }
-
-        User user(name, surname);
-        for (int i = 0; i < phones.size(); i++) {
-            user.add_phone_number(phones[i]);
-        }
-        users.insert(user);
-
-    }
-}
-
-
-
-
 

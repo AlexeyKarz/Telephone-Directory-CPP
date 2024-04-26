@@ -10,4 +10,6 @@ add_executable(TelDirectory main.cpp
         LinkedList/LinkedList.cpp
         LinkedList/Node.h
         LinkedList/Node.h
-        LinkedList/Node.cpp)
+        LinkedList/Node.cpp
+        FileIO/FileManager.h
+        FileIO/FileManager.cpp)
