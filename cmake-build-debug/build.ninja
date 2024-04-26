@@ -61,23 +61,17 @@ build CMakeFiles/TelDirectory.dir/User/User.cpp.o: CXX_COMPILER__TelDirectory_un
   OBJECT_DIR = CMakeFiles/TelDirectory.dir
   OBJECT_FILE_DIR = CMakeFiles/TelDirectory.dir/User
 
-build CMakeFiles/TelDirectory.dir/LinkedList/LinkedList.cpp.o: CXX_COMPILER__TelDirectory_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/LinkedList/LinkedList.cpp || cmake_object_order_depends_target_TelDirectory
-  DEP_FILE = CMakeFiles/TelDirectory.dir/LinkedList/LinkedList.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/TelDirectory.dir
-  OBJECT_FILE_DIR = CMakeFiles/TelDirectory.dir/LinkedList
-
-build CMakeFiles/TelDirectory.dir/LinkedList/Node.cpp.o: CXX_COMPILER__TelDirectory_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/LinkedList/Node.cpp || cmake_object_order_depends_target_TelDirectory
-  DEP_FILE = CMakeFiles/TelDirectory.dir/LinkedList/Node.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/TelDirectory.dir
-  OBJECT_FILE_DIR = CMakeFiles/TelDirectory.dir/LinkedList
-
 build CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o: CXX_COMPILER__TelDirectory_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/FileIO/FileManager.cpp || cmake_object_order_depends_target_TelDirectory
   DEP_FILE = CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/TelDirectory.dir
   OBJECT_FILE_DIR = CMakeFiles/TelDirectory.dir/FileIO
+
+build CMakeFiles/TelDirectory.dir/UserListManagment/UserManager.cpp.o: CXX_COMPILER__TelDirectory_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/UserListManagment/UserManager.cpp || cmake_object_order_depends_target_TelDirectory
+  DEP_FILE = CMakeFiles/TelDirectory.dir/UserListManagment/UserManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/TelDirectory.dir
+  OBJECT_FILE_DIR = CMakeFiles/TelDirectory.dir/UserListManagment
 
 
 # =============================================================================
@@ -87,7 +81,7 @@ build CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o: CXX_COMPILER__TelDir
 #############################################
 # Link the executable TelDirectory
 
-build TelDirectory: CXX_EXECUTABLE_LINKER__TelDirectory_Debug CMakeFiles/TelDirectory.dir/main.cpp.o CMakeFiles/TelDirectory.dir/User/User.cpp.o CMakeFiles/TelDirectory.dir/LinkedList/LinkedList.cpp.o CMakeFiles/TelDirectory.dir/LinkedList/Node.cpp.o CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o
+build TelDirectory: CXX_EXECUTABLE_LINKER__TelDirectory_Debug CMakeFiles/TelDirectory.dir/main.cpp.o CMakeFiles/TelDirectory.dir/User/User.cpp.o CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o CMakeFiles/TelDirectory.dir/UserListManagment/UserManager.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/TelDirectory.dir
   POST_BUILD = :

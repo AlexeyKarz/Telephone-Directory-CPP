@@ -1,6 +1,9 @@
 # ninja log v5
-19	349	1714058125223483323	CMakeFiles/TelDirectory.dir/LinkedList/Node.cpp.o	f80f532b878f8fb3
-20	613	1714058859845428691	CMakeFiles/TelDirectory.dir/LinkedList/LinkedList.cpp.o	1349fa1311b80db0
-6	316	1714060051303559003	CMakeFiles/TelDirectory.dir/User/User.cpp.o	5d2765c87341826e
-6	1127	1714145300807374844	CMakeFiles/TelDirectory.dir/main.cpp.o	9317b71a81b2a2af
-1127	1179	1714145300862560729	TelDirectory	5a1daefb2cc1fc6c
+7	788	1714147196733076079	CMakeFiles/TelDirectory.dir/LinkedList/LinkedList.cpp.o	1349fa1311b80db0
+6	802	1714147196750229731	CMakeFiles/TelDirectory.dir/main.cpp.o	9317b71a81b2a2af
+7	746	1714147336907451346	CMakeFiles/TelDirectory.dir/FileIO/FileManager.cpp.o	c36eae13835e1ba9
+746	911	1714147337072950907	TelDirectory	fba6a1e19650dc2
+7	852	1714147196797783369	CMakeFiles/TelDirectory.dir/User/User.cpp.o	5d2765c87341826e
+7	357	1714147196291105704	CMakeFiles/TelDirectory.dir/LinkedList/Node.cpp.o	f80f532b878f8fb3
+8	1187	1714147197132319430	CMakeFiles/TelDirectory.dir/UserListManagment/UserManager.cpp.o	7a3874b5f86f999e
+5	169	1714147382519822902	TelDirectory	8c959b45acf4cd31

@@ -13,7 +13,7 @@
  * @param users - list of users
  * @param filename - name of the file
  */
-void writeToFile(const LinkedList<User> &users, const string &filename) {
+void FileManager::writeToFile(const LinkedList<User> &users, const string &filename) {
 
     ofstream file(filename);
 
@@ -35,7 +35,7 @@ void writeToFile(const LinkedList<User> &users, const string &filename) {
  * @param users - list of users
  * @param filename - name of the file
  */
-void readFromFile(LinkedList<User> &users, const string &filename) {
+void FileManager::readFromFile(LinkedList<User> &users, const string &filename) {
 
     ifstream file(filename);
     // if the file does not exist, create it
