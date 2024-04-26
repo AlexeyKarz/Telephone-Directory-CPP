@@ -1,16 +1,30 @@
-//
-// Created by Karzanov Alexey on 26.04.2024.
-//
+/** \file UserManager.cpp
+ * \brief Implementation of the functions for managing the user list.
+ * Contains the implementation of the functions for managing the user list.
+ * \author Karzanov Alexey
+ * \version 1.0
+ * \date 26.04.2024
+ */
 
 #include "UserManager.h"
 #include <regex>
 
+/** Function <code>validString</code> checks whether the string contains only allowed characters.
+ * <BR>
+ * @param str the string to be checked
+ * @return true if the string contains only allowed characters, false otherwise
+ */
 bool validString(string const &str) {
     // allowed characters: a-z, A-Z, 0-9, space, hyphen, apostrophe
     regex validString("^[a-zA-Z0-9 '-]+$");
     return regex_match(str, validString);
 }
 
+/** Function <code>addSubscriber</code> adds a new subscriber to the list.
+ * <BR>
+ * @param users the list of users
+ * @return true if the subscriber was added successfully, false otherwise
+ */
 bool addSubscriber(LinkedList<User> &users) {
 
     // ask for the name and surname
@@ -46,6 +60,12 @@ bool addSubscriber(LinkedList<User> &users) {
     return true;
 }
 
+/** Function <code>findSubscriber</code> finds a subscriber in the list.
+ * <BR>
+ * @param users the list of users
+ * @param found the found user
+ * @return true if the subscriber was found, false otherwise
+ */
 bool findSubscriber(LinkedList<User> &users, Node<User> *&found) {
 
         // ask for the name and surname
@@ -75,6 +95,11 @@ bool findSubscriber(LinkedList<User> &users, Node<User> *&found) {
 
 }
 
+/** Function <code>addPhoneNumber</code> adds a phone number to the subscriber.
+ * <BR>
+ * @param users the list of users
+ * @return true if the phone number was added successfully, false otherwise
+ */
 bool addPhoneNumber(LinkedList<User> &users) {
 
     Node<User> *current;
@@ -94,6 +119,11 @@ bool addPhoneNumber(LinkedList<User> &users) {
 
 }
 
+/** Function <code>deletePhoneNumber</code> deletes a phone number from the subscriber.
+ * <BR>
+ * @param users the list of users
+ * @return true if the phone number was deleted successfully, false otherwise
+ */
 bool deletePhoneNumber(LinkedList<User> &users) {
 
     Node<User> *current;
@@ -115,6 +145,11 @@ bool deletePhoneNumber(LinkedList<User> &users) {
     return true;
 }
 
+/** Function <code>deleteSubscriber</code> deletes a subscriber from the list.
+ * <BR>
+ * @param users the list of users
+ * @return true if the subscriber was deleted successfully, false otherwise
+ */
 bool deleteSubscriber(LinkedList<User> &users) {
 
     Node<User> *current;
@@ -126,4 +161,21 @@ bool deleteSubscriber(LinkedList<User> &users) {
     // delete the subscriber
     users.remove(current->entry);
     return true;
+}
+
+/** Function <code>displayPhoneNumbers</code> displays the phone numbers of the subscriber.
+ * <BR>
+ * @param users the list of users
+ */
+void displayPhoneNumbers(LinkedList<User> &users) {
+
+        Node<User> *current;
+        // find the subscriber
+        if (!findSubscriber(users, current)) {
+            return; // the user was not found
+        }
+
+        // display the phone numbers
+        cout << "Phone Numbers:" << endl;
+        current->entry.print_phone_numbers();
 }

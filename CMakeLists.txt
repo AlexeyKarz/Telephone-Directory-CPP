@@ -11,5 +11,5 @@ add_executable(TelDirectory main.cpp
         LinkedList/Node.h
         FileIO/FileManager.h
         FileIO/FileManager.cpp
-        UserListManagment/UserManager.h
-        UserListManagment/UserManager.cpp)
+        UserListManagement/UserManager.h
+        UserListManagement/UserManager.cpp)

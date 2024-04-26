@@ -1,16 +1,30 @@
-
+/**
+ * \file main.cpp
+ * \brief Main file for the telephone directory program.
+ * This file contains the main function for the telephone directory program.
+ * \details The program allows to add, delete, display subscribers and their phone numbers.
+ * The data is stored in a linked list and is read from and written to a file.
+ * \author Karzanov Alexey
+ * \version 1.0
+ * \date 26.04.2024
+ * \copyright University of Nicosia.
+ * The program is for educational purposes only.
+ */
 
 #include <iostream>
 #include "User/User.h"
 #include "LinkedList/LinkedList.h"
 #include "FileIO/FileManager.h"
-#include "UserListManagment/UserManager.h"
+#include "UserListManagement/UserManager.h"
 
 using namespace std;
 
+// function prototypes
 void printMenu();
 
-
+/** Main function. Entry point of the program
+ * @return 0 if the program exits successfully
+ */
 int main() {
 
     // create a list of users
@@ -18,10 +32,11 @@ int main() {
 
     // read from file users data and add it to the list
     string filename = "../teldir.txt";
-    FileManager fileManager;
+    FileManager fileManager; // create a file manager object
     fileManager.readFromFile(users, filename);
 
-//    add a sample user
+//    add a sample user for testing
+//    uncomment the following lines to add a sample user
 //    User user("John", "Doe");
 //    user.add_phone_number("123456789");
 //    user.add_phone_number("987654321");
@@ -54,9 +69,7 @@ int main() {
             }
             case 4: {
                 // display a subscriber's phone numbers
-                // for test display one
-                Node<User> *current = users.get_head();
-                current->entry.print();
+                displayPhoneNumbers(users);
                 break;
             }
             case 5: {
@@ -75,6 +88,7 @@ int main() {
                 break;
             }
             default: {
+                // handle invalid choice
                 if (cin.fail()) {
                     cin.clear();
                     cin.ignore(32767, '\n');
@@ -83,14 +97,15 @@ int main() {
                     cout << "Invalid choice!" << endl;
                 }
             }
-
         }
-
     } while (choice != 7);
 
     return 0;
 }
 
+/**
+ * Function <code>printMenu</code> prints the menu of the program
+ */
 void printMenu() {
     cout << "1. Add a new subscriber" << endl;
     cout << "2. Remove the phone from a subscriber" << endl;

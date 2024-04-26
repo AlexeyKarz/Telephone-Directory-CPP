@@ -1,7 +1,8 @@
 /** \file FileManager.h
+ *  \brief Declaration of the FileManager class.
  *  \author Aleksei Karzanov
- *  \created 26.04.2024
  *  \version 1.0
+ *  \date 26.04.2024
  *  \since 1.0
  */
 

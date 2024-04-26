@@ -1,6 +1,10 @@
-//
-// Created by Karzanov Alexey on 25.04.2024.
-//
+/** \file User.h
+ *  \brief Declaration of the User class.
+ *  \author Aleksei Karzanov
+ *  \version 1.0
+ *  \date 26.04.2024
+ *  \since 1.0
+ */
 
 #ifndef TELDIRECTORY_USER_H
 #define TELDIRECTORY_USER_H
@@ -9,16 +13,15 @@
 #include <iostream>
 #include <vector>
 
-/* I have to include LinkedList.cpp and Node.cpp here because
- * they are a template classes, and template is declared here */
-//#include "../LinkedList/LinkedList.cpp"
-//#include "../LinkedList/Node.cpp"
-//#include "../FileIO/FileManager.cpp"
-//#include "../UserListManagment/UserManager.cpp"
 
 using namespace std;
 
-
+/** User class represents a user with a name, surname and a list of phone numbers
+ * @author Aleksei Karzanov
+ * @created 26.04.2024
+ * @version 1.0
+ * @since 1.0
+ */
 class User {
 public:
     User();
