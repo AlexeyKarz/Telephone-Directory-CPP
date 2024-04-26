@@ -18,6 +18,7 @@ public:
     bool empty() const;
     int size() const;
     Node<List_entry>* get_head() const;
+    Node<List_entry>* find_by_key(const List_entry &key) const;
     Error_code retrieve(int position, List_entry &x) const;
     Error_code remove(const List_entry &item);
     Error_code insert(const List_entry &item);
@@ -82,8 +83,21 @@ template <class List_entry> Error_code LinkedList<List_entry>::retrieve(int posi
     return success;
 }
 
+
+
 template <class List_entry> Node<List_entry>* LinkedList<List_entry>::get_head() const {
     return head;
+}
+
+template <class List_entry> Node<List_entry>* LinkedList<List_entry>::find_by_key(const List_entry &key) const {
+    Node<List_entry> *current = head;
+    while (current != nullptr) {
+        if (current->entry == key) {
+            return current;
+        }
+        current = current->next;
+    }
+    return nullptr;
 }
 
 template <class List_entry> Error_code LinkedList<List_entry>::insert(const List_entry &item)
@@ -157,7 +171,7 @@ template <class List_entry> void LinkedList<List_entry>::print() const
     else {
         Node<List_entry> *temp = head;
         while (temp != NULL) {
-            temp->entry.print();
+            temp->entry.print(); // method print() should be implemented in the class List_entry
             temp = temp->next;
         }
     }

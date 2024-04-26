@@ -8,7 +8,11 @@
 #include "../LinkedList/LinkedList.h"
 #include "../User/User.h"
 
+bool validString(const string &str);
 bool addSubscriber(LinkedList<User> &users);
+bool deleteSubscriber(LinkedList<User> &users);
+bool addPhoneNumber(LinkedList<User> &users);
+bool deletePhoneNumber(LinkedList<User> &users);
 
 
 

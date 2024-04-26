@@ -4,7 +4,6 @@
 
 #include "User.h"
 
-
 User::User()
 {
     name = "";
@@ -27,9 +26,18 @@ string User::get_surname() const
     return surname;
 }
 
-void User::add_phone_number(string phone)
+void User::add_phone_number(string const phone)
 {
     phones.push_back(phone);
+}
+
+void User::delete_phone_number(string const phone) {
+    for (int i = 0; i < phones.size(); i++) {
+        if (phones[i] == phone) {
+            phones.erase(phones.begin() + i);
+            return;
+        }
+    }
 }
 
 vector<string> User::get_phones() const
@@ -59,4 +67,8 @@ bool User::operator < (const User &otherUser) const {
         return name < otherUser.name;
     }
     return false;
+}
+
+bool User::operator == (const User &otherUser) const {
+    return name == otherUser.name && surname == otherUser.surname;
 }

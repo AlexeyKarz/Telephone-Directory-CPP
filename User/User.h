@@ -25,12 +25,14 @@ public:
     User(string const name, string const surname);
     string get_name() const;
     string get_surname() const;
-    void add_phone_number(string phone);
+    void add_phone_number(string const phone);
+    void delete_phone_number(string const phone);
     vector<string> get_phones() const;
     void print_phone_numbers() const;
     void print() const;
-    // overload < operator
+    // overload < and == operators
     bool operator < (const User &otherUser) const;
+    bool operator == (const User &otherUser) const;
 private:
     string name;
     string surname;

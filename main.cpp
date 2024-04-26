@@ -21,7 +21,7 @@ int main() {
     FileManager fileManager;
     fileManager.readFromFile(users, filename);
 
-//     add a sample user
+//    add a sample user
 //    User user("John", "Doe");
 //    user.add_phone_number("123456789");
 //    user.add_phone_number("987654321");
@@ -48,6 +48,7 @@ int main() {
             }
             case 3: {
                 // add a phone to a subscriber
+                addPhoneNumber(users);
                 break;
             }
             case 4: {
