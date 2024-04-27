@@ -53,17 +53,32 @@ int main() {
         switch (choice) {
             case 1: {
                 // add a new subscriber
-                addSubscriber(users);
+                if(addSubscriber(users)) {
+                    cout << "The subscriber was added successfully." << endl;
+                }
+                else {
+                    cout << "The subscriber was not added." << endl;
+                }
                 break;
             }
             case 2: {
                 // remove the phone from a subscriber
-                deletePhoneNumber(users);
+                if (deletePhoneNumber(users)) {
+                    cout << "The phone number was removed successfully." << endl;
+                }
+                else {
+                    cout << "The phone number was not removed." << endl;
+                }
                 break;
             }
             case 3: {
                 // add a phone to a subscriber
-                addPhoneNumber(users);
+                if (addPhoneNumber(users)) {
+                    cout << "The phone number was added successfully." << endl;
+                }
+                else {
+                    cout << "The phone number was not added." << endl;
+                }
                 break;
             }
             case 4: {
@@ -73,7 +88,12 @@ int main() {
             }
             case 5: {
                 // delete a subscriber
-                deleteSubscriber(users);
+                if (deleteSubscriber(users)) {
+                    cout << "The subscriber was deleted successfully." << endl;
+                }
+                else {
+                    cout << "The subscriber was not deleted." << endl;
+                }
                 break;
             }
             case 6: {

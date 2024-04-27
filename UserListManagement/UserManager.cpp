@@ -43,6 +43,31 @@ bool addSubscriber(LinkedList<User> &users) {
     // create a new user
     User user(name, surname);
 
+    // check whether the user already exists
+    Node<User> *found = users.find_by_key(user);
+    if (found != nullptr) {
+        cout << "The user already exists. Do you want to add a phone number? (y/n) ";
+        char choice;
+        cin >> choice;
+        cin.ignore(); // to ignore the newline character
+        if (choice == 'n' || choice == 'N') {
+            return false;
+        }
+        else if (choice != 'y' && choice != 'Y') {
+            cout << "Invalid input." << endl;
+            return false;
+        }
+        else {
+            // add the phone number
+            string phone;
+            cout << "Enter the phone number: ";
+            getline(cin, phone);
+            found->entry.add_phone_number(phone);
+            cout << "The phone number was added successfully." << endl;
+            return false; // the user was not added
+        }
+    }
+
     // ask for the phone numbers
     string phone;
     cout << "How many phone numbers do you want to add? ";
