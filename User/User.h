@@ -25,11 +25,11 @@ using namespace std;
 class User {
 public:
     User();
-    User(string const name, string const surname);
+    User(string const& name, string const& surname);
     string get_name() const;
     string get_surname() const;
-    void add_phone_number(string const phone);
-    bool delete_phone_number(string const phone);
+    void add_phone_number(string const& phone);
+    bool delete_phone_number(string const& phone);
     vector<string> get_phones() const;
     void print_phone_numbers() const;
     void print() const;

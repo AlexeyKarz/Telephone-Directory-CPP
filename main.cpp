@@ -32,8 +32,7 @@ int main() {
 
     // read from file users data and add it to the list
     string filename = "../teldir.txt";
-    FileManager fileManager; // create a file manager object
-    fileManager.readFromFile(users, filename);
+    FileManager::readFromFile(users, filename); // read from file by calling the static method
 
 //    add a sample user for testing
 //    uncomment the following lines to add a sample user
@@ -84,7 +83,7 @@ int main() {
             }
             case 7: {
                 // exit
-                fileManager.writeToFile(users, filename);
+                FileManager::writeToFile(users, filename);
                 break;
             }
             default: {

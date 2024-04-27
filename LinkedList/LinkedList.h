@@ -33,10 +33,10 @@ public:
     Error_code remove(const List_entry &item);
     Error_code insert(const List_entry &item);
     void print() const;
-//    // Safequards
-//    ~LinkedList();
-//    LinkedList(const LinkedList<List_entry> &copy);
-//    void operator = (const LinkedList<List_entry> &original);
+    // Safequards
+    ~LinkedList();
+    LinkedList(const LinkedList<List_entry> &copy);
+    void operator = (const LinkedList<List_entry> &original);
 protected:
     Node<List_entry> *head;
 };
@@ -226,6 +226,65 @@ template <class List_entry> void LinkedList<List_entry>::print() const
     }
     cout << endl << endl;
 }
+
+// ------- Safeguards ----------
+
+/** Destructor
+ *  @details This function deletes all nodes in the list
+ */
+template <class List_entry> LinkedList<List_entry>::~LinkedList()
+{
+    Node<List_entry> *tmp;
+
+
+    while (head != NULL)
+    {
+        tmp = head;
+        head = head->next;
+        delete tmp;
+    }
+}
+
+/** Copy constructor
+ *  @details This function creates a copy of the list
+ */
+template <class List_entry> LinkedList<List_entry>::LinkedList(const LinkedList<List_entry> &original)
+{
+    Node<List_entry> *new_copy, *original_node = original.head;
+    if (original_node == NULL) head = NULL;
+    else
+    {
+        head = new_copy = new Node<List_entry>(original_node->entry);
+        while (original_node->next != NULL)
+        {
+            original_node = original_node->next;
+            new_copy->next = new Node<List_entry>(original_node->entry);
+            new_copy = new_copy->next;
+        }
+    }
+}
+
+/** Operator =
+ *  @details This function assigns the list to another list
+ */
+template <class List_entry>void LinkedList<List_entry>::operator=(const LinkedList<List_entry> &original)
+{
+    Node<List_entry> *new_head,*new_copy, *original_node = original.head;
+    if (original_node == NULL) head = NULL;
+    else
+    {
+        new_copy = new_head = new Node<List_entry>(original_node->entry);
+        while (original_node->next != NULL)
+        {
+            original_node = original_node->next;
+            new_copy->next = new Node<List_entry>(original_node->entry);
+            new_copy = new_copy->next;
+        }
+    }
+    clear();
+    head = new_head;
+}
+
 
 #endif //TELDIRECTORY_LINKEDLIST_H
 

@@ -17,7 +17,7 @@ User::User()
 }
 
 // Constructor with parameters
-User::User(string const name, string const surname)
+User::User(string const& name, string const& surname)
 {
     this->name = name;
     this->surname = surname;
@@ -42,7 +42,7 @@ string User::get_surname() const
 /** Method add_phone_number adds a new phone number to the list of phone numbers
  * @param phone the phone number to be added
  */
-void User::add_phone_number(string const phone)
+void User::add_phone_number(string const& phone)
 {
     phones.push_back(phone);
 }
@@ -51,7 +51,7 @@ void User::add_phone_number(string const phone)
  * @param phone the phone number to be deleted
  * @return true if the phone number was deleted successfully, false otherwise
  */
-bool User::delete_phone_number(string const phone) {
+bool User::delete_phone_number(string const& phone) {
     for (int i = 0; i < phones.size(); i++) {
         if (phones[i] == phone) {
             phones.erase(phones.begin() + i);

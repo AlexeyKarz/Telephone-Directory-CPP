@@ -22,8 +22,8 @@
 class FileManager {
 public:
     FileManager() = default;
-    void writeToFile(const LinkedList<User> &users, const string &filename);
-    void readFromFile(LinkedList<User> &users, const string &filename);
+    static void writeToFile(const LinkedList<User> &users, const string &filename);
+    static void readFromFile(LinkedList<User> &users, const string &filename);
 };
 
 
