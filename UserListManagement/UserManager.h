@@ -13,6 +13,8 @@
 
 // Function prototypes
 bool validString(const string &str);
+bool validPhoneNumber(string const &str);
+void askForNumber(string &phone);
 bool addSubscriber(LinkedList<User> &users);
 bool findSubscriber(LinkedList<User> &users, Node<User> *&found);
 bool deleteSubscriber(LinkedList<User> &users);

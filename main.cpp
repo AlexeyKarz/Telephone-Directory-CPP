@@ -31,7 +31,7 @@ int main() {
     LinkedList<User> users;
 
     // read from file users data and add it to the list
-    string filename = "../teldir.txt";
+    string filename = "/Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/teldir.txt";
     FileManager::readFromFile(users, filename); // read from file by calling the static method
 
 //    add a sample user for testing

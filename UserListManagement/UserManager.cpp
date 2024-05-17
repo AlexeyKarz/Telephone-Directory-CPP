@@ -20,6 +20,28 @@ bool validString(string const &str) {
     return regex_match(str, validString);
 }
 
+/** Function <code>validPhoneNumber</code> checks whether the phone number contains only allowed characters.
+ * <BR>
+ * @param str the phone number to be checked
+ * @return true if the phone number contains only allowed characters, false otherwise
+ */
+bool validPhoneNumber(string const &str) {
+    // allowed characters: 0-9, space, hyphen, apostrophe
+    regex validPhoneNumber("^[0-9 '-]+$");
+    return regex_match(str, validPhoneNumber);
+}
+
+void askForNumber(string &phone) {
+    do {
+        cout << "Enter the phone number: ";
+        getline(cin, phone);
+        // check whether the input is valid (contains only allowed characters)
+        if (!validPhoneNumber(phone)) {
+            cout << "Invalid input. The phone number should contain only digits, spaces, hyphens, and apostrophes." << endl;
+        }
+    } while (!validPhoneNumber(phone));
+}
+
 /** Function <code>addSubscriber</code> adds a new subscriber to the list.
  * <BR>
  * @param users the list of users
@@ -60,8 +82,7 @@ bool addSubscriber(LinkedList<User> &users) {
         else {
             // add the phone number
             string phone;
-            cout << "Enter the phone number: ";
-            getline(cin, phone);
+            askForNumber(phone);
             found->entry.add_phone_number(phone);
             cout << "The phone number was added successfully." << endl;
             return false; // the user was not added
@@ -75,8 +96,7 @@ bool addSubscriber(LinkedList<User> &users) {
     cin >> count;
     cin.ignore(); // to ignore the newline character
     for (int i = 0; i < count; i++) {
-        cout << "Enter the phone number: ";
-        getline(cin, phone);
+        askForNumber(phone);
         user.add_phone_number(phone);
     }
 
@@ -135,8 +155,7 @@ bool addPhoneNumber(LinkedList<User> &users) {
 
     // ask for the phone number
     string phone;
-    cout << "Enter the phone number: ";
-    getline(cin, phone);
+    askForNumber(phone);
 
     // add the phone number
     current->entry.add_phone_number(phone);
