@@ -112,8 +112,534 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alexeyks/CLionProjects/datastruct/TelDirectory/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target GoogleTests
+
+
+#############################################
+# Order-only phony target for GoogleTests
+
+build cmake_object_order_depends_target_GoogleTests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build Tests/CMakeFiles/GoogleTests.dir/__/FileIO/FileManager.cpp.o: CXX_COMPILER__GoogleTests_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/FileIO/FileManager.cpp || cmake_object_order_depends_target_GoogleTests
+  DEP_FILE = Tests/CMakeFiles/GoogleTests.dir/__/FileIO/FileManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/CMakeFiles/GoogleTests.dir
+  OBJECT_FILE_DIR = Tests/CMakeFiles/GoogleTests.dir/__/FileIO
+
+build Tests/CMakeFiles/GoogleTests.dir/__/User/User.cpp.o: CXX_COMPILER__GoogleTests_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/User/User.cpp || cmake_object_order_depends_target_GoogleTests
+  DEP_FILE = Tests/CMakeFiles/GoogleTests.dir/__/User/User.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/CMakeFiles/GoogleTests.dir
+  OBJECT_FILE_DIR = Tests/CMakeFiles/GoogleTests.dir/__/User
+
+build Tests/CMakeFiles/GoogleTests.dir/__/UserListManagement/UserManager.cpp.o: CXX_COMPILER__GoogleTests_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/UserListManagement/UserManager.cpp || cmake_object_order_depends_target_GoogleTests
+  DEP_FILE = Tests/CMakeFiles/GoogleTests.dir/__/UserListManagement/UserManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/CMakeFiles/GoogleTests.dir
+  OBJECT_FILE_DIR = Tests/CMakeFiles/GoogleTests.dir/__/UserListManagement
+
+build Tests/CMakeFiles/GoogleTests.dir/unittests.cpp.o: CXX_COMPILER__GoogleTests_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/unittests.cpp || cmake_object_order_depends_target_GoogleTests
+  DEP_FILE = Tests/CMakeFiles/GoogleTests.dir/unittests.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/CMakeFiles/GoogleTests.dir
+  OBJECT_FILE_DIR = Tests/CMakeFiles/GoogleTests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GoogleTests
+
+
+#############################################
+# Link the executable Tests/GoogleTests
+
+build Tests/GoogleTests: CXX_EXECUTABLE_LINKER__GoogleTests_Debug Tests/CMakeFiles/GoogleTests.dir/__/FileIO/FileManager.cpp.o Tests/CMakeFiles/GoogleTests.dir/__/User/User.cpp.o Tests/CMakeFiles/GoogleTests.dir/__/UserListManagement/UserManager.cpp.o Tests/CMakeFiles/GoogleTests.dir/unittests.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
+  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
+  OBJECT_DIR = Tests/CMakeFiles/GoogleTests.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Tests/GoogleTests
+  TARGET_PDB = GoogleTests.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Tests/edit_cache: phony Tests/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/alexeyks/CLionProjects/datastruct/TelDirectory -B/Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Tests/rebuild_cache: phony Tests/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Tests/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Tests/CMakeFiles/install.util: CUSTOM_COMMAND Tests/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Tests/install: phony Tests/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Tests/CMakeFiles/install/local.util: CUSTOM_COMMAND Tests/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Tests/install/local: phony Tests/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND Tests/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Tests/install/strip: phony Tests/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build Tests/googletests-lib/googletest-main/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/edit_cache: phony Tests/googletests-lib/googletest-main/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Tests/googletests-lib/googletest-main/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/alexeyks/CLionProjects/datastruct/TelDirectory -B/Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/rebuild_cache: phony Tests/googletests-lib/googletest-main/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Tests/googletests-lib/googletest-main/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Tests/googletests-lib/googletest-main/CMakeFiles/install.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/install: phony Tests/googletests-lib/googletest-main/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Tests/googletests-lib/googletest-main/CMakeFiles/install/local.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/install/local: phony Tests/googletests-lib/googletest-main/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Tests/googletests-lib/googletest-main/CMakeFiles/install/strip.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/install/strip: phony Tests/googletests-lib/googletest-main/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Order-only phony target for gmock
+
+build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
+  DEP_FILE = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
+  FLAGS = -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/include -I/Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir
+  OBJECT_FILE_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Link the static library lib/libgmock.a
+
+build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgmock.a
+  TARGET_PDB = gmock.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Order-only phony target for gmock_main
+
+build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  DEP_FILE = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
+  FLAGS = -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir
+  OBJECT_FILE_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Link the static library lib/libgmock_main.a
+
+build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmock.a lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/gmock_main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgmock_main.a
+  TARGET_PDB = gmock_main.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googlemock/edit_cache: phony Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/alexeyks/CLionProjects/datastruct/TelDirectory -B/Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googlemock/rebuild_cache: phony Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Tests/googletests-lib/googletest-main/googlemock/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googlemock/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googlemock/install: phony Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install/local.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googlemock/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googlemock/install/local: phony Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install/strip.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googlemock/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googlemock/install/strip: phony Tests/googletests-lib/googletest-main/googlemock/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
+  FLAGS = -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -I/Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir
+  OBJECT_FILE_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library lib/libgtest.a
+
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgtest.a
+  TARGET_PDB = gtest.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Order-only phony target for gtest_main
+
+build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
+  FLAGS = -g -std=c++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/include -isystem /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir
+  OBJECT_FILE_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Link the static library lib/libgtest_main.a
+
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Tests/googletests-lib/googletest-main/googletest/CMakeFiles/gtest_main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgtest_main.a
+  TARGET_PDB = gtest_main.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googletest/edit_cache: phony Tests/googletests-lib/googletest-main/googletest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/alexeyks/CLionProjects/datastruct/TelDirectory -B/Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googletest/rebuild_cache: phony Tests/googletests-lib/googletest-main/googletest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Tests/googletests-lib/googletest-main/googletest/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googletest/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googletest/install: phony Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install/local.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googletest/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googletest/install/local: phony Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND Tests/googletests-lib/googletest-main/googletest/all
+  COMMAND = cd /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Tests/googletests-lib/googletest-main/googletest/install/strip: phony Tests/googletests-lib/googletest-main/googletest/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
+
+build GoogleTests: phony Tests/GoogleTests
+
+build gmock: phony lib/libgmock.a
+
+build gmock_main: phony lib/libgmock_main.a
+
+build gtest: phony lib/libgtest.a
+
+build gtest_main: phony lib/libgtest_main.a
+
+build libgmock.a: phony lib/libgmock.a
+
+build libgmock_main.a: phony lib/libgmock_main.a
+
+build libgtest.a: phony lib/libgtest.a
+
+build libgtest_main.a: phony lib/libgtest_main.a
 
 # =============================================================================
 # Folder targets.
@@ -123,7 +649,35 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug
 
-build all: phony TelDirectory
+build all: phony TelDirectory Tests/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests
+
+build Tests/all: phony Tests/GoogleTests Tests/googletests-lib/googletest-main/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main
+
+build Tests/googletests-lib/googletest-main/all: phony Tests/googletests-lib/googletest-main/googlemock/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googlemock
+
+build Tests/googletests-lib/googletest-main/googlemock/all: phony lib/libgmock.a lib/libgmock_main.a Tests/googletests-lib/googletest-main/googletest/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alexeyks/CLionProjects/datastruct/TelDirectory/cmake-build-debug/Tests/googletests-lib/googletest-main/googletest
+
+build Tests/googletests-lib/googletest-main/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 # Built-in targets
@@ -132,14 +686,14 @@ build all: phony TelDirectory
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Users/alexeyks/CLionProjects/datastruct/TelDirectory/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake teldir.txt
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /Users/alexeyks/CLionProjects/datastruct/TelDirectory/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/cmake/gmock.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/Config.cmake.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/gtest.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/gtest_main.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/internal_utils.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake teldir.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Users/alexeyks/CLionProjects/datastruct/TelDirectory/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake teldir.txt: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /Users/alexeyks/CLionProjects/datastruct/TelDirectory/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/cmake/gmock.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/CMakeLists.txt /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/Config.cmake.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/gtest.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/gtest_main.pc.in /Users/alexeyks/CLionProjects/datastruct/TelDirectory/Tests/googletests-lib/googletest-main/googletest/cmake/internal_utils.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake teldir.txt: phony
 
 
 #############################################

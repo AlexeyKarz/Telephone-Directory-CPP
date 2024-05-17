@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake-build-debug/teldir.txt
         ${CMAKE_CURRENT_BINARY_DIR})
 
+add_subdirectory(Tests)
+
 add_executable(TelDirectory main.cpp
         User/User.h
         User/User.cpp
